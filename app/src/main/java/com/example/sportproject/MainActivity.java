@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     //cette méthode pour exécuter la barre de progression pendant 5 secondes
     private void playProgress() {
         ObjectAnimator.ofInt(splashProgress, "progress", 100)
-                .setDuration(5000)
+                .setDuration(4000)
                 .start();
     }
 }
