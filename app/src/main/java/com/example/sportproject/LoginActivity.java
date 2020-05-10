@@ -56,9 +56,9 @@ public class LoginActivity extends AppCompatActivity {
                         Snackbar.make(buttonLogin, "Connexion réussie!", Snackbar.LENGTH_LONG).show();
 
                         //L'utilisateur connecté a lancé avec succès
-                       /* Intent intent=new Intent(LoginActivity.this,HomeScreenActivity.class);
+                       Intent intent=new Intent(LoginActivity.this,HomeActivity.class);
                         startActivity(intent);
-                        finish();*/
+                        finish();
                     } else {
 
                         //Échec de la connexion de l'utilisateur
