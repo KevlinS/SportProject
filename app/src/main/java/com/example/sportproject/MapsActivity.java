@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
-import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -37,7 +36,6 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MapStyleOptions;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
@@ -66,8 +64,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Button btmiddle = null;
     private TextView texttime = null;
     private TextView textlength = null;
-    private TextView textpace = null;
-    private TextView textcalories = null;
     private Timer mTimer = null;
     private TimerTask mTimerTask = null;
     private Handler mHandler = null;
@@ -80,8 +76,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private static double longitude = 0;
     private static double vdraw = 0;
     private static int v = 0;
-    private static int pace = 0;
-    private static int calories = 0;
 
     private boolean isPause = false;
     private boolean isStop = true;
@@ -401,7 +395,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 btright.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 btmiddle.setEnabled(true);
                 startTimer();
-                btmiddle.setBackgroundResource(R.drawable.pause_button);
+                btmiddle.setBackgroundResource(R.drawable.button_pause);
                 textlength.setText("0.00");
 
 
@@ -420,11 +414,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 pauseTimer();
 
                 if (isPause) {//pause
-                    btmiddle.setBackgroundResource(R.drawable.play_button);
+                    btmiddle.setBackgroundResource(R.drawable.button_play);
                     //arreter de dessiner
                     isDraw = false;
                 }else{//continuer
-                    btmiddle.setBackgroundResource(R.drawable.pause_button);
+                    btmiddle.setBackgroundResource(R.drawable.button_pause);
                     previousLocation = null;
                     isDraw = true;
                 }
