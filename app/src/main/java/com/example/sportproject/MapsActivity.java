@@ -442,7 +442,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         stopTimer();
         sum = 0;
-        btmiddle.setBackgroundResource(R.drawable.logo_round);
+        btmiddle.setBackgroundResource(R.drawable.logo);
         btleft.setEnabled(true);
         btleft.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         btmiddle.setEnabled(false);
