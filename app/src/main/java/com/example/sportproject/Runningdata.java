@@ -11,8 +11,8 @@ public class Runningdata {
     @PrimaryKey(autoGenerate = true)
     public int id;
 
-    @ColumnInfo(name = "calorie")
-    private double calorie;
+    @ColumnInfo(name = "finishtime")
+    private String finishtime;
 
     @ColumnInfo(name = "starttime")
     private String starttime;
@@ -32,12 +32,12 @@ public class Runningdata {
         this.starttime = running_starttime;
     }
 
-    public double getCalorie() {
-        return calorie;
+    public String getFinishtime() {
+        return finishtime;
     }
 
-    public void setCalorie(double running_calorie) {
-        this.calorie = running_calorie;
+    public void setFinishtime(String running_finishtime) {
+        this.finishtime = running_finishtime;
     }
 
    public double getDistance() { return distance; }

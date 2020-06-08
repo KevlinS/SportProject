@@ -34,15 +34,7 @@
             android:textColor="@color/text"
             android:textSize="14dp"
             android:textAlignment="center"
-            android:background="@drawable/sideline"/>
-        <TextView
-            android:id="@+id/text_calories"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14dp"
-            android:textColor="@color/text"
-            android:text=" calories "
-            android:textAlignment="center"
+            android:layout_weight="2"
             android:background="@drawable/sideline"/>
         <TextView
             android:id="@+id/text_starttime"
@@ -50,9 +42,22 @@
             android:layout_height="wrap_content"
             android:textSize="14dp"
             android:textColor="@color/text"
-            android:text="Start Time"
+            android:text="Heure de début"
             android:textAlignment="center"
-            android:layout_weight="1"/>
+            android:layout_weight="2"
+            android:background="@drawable/sideline"/>
+
+        <TextView
+            android:id="@+id/text_heuredefin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:textColor="@color/text"
+            android:text="Heure de fin"
+            android:textAlignment="center"
+            android:layout_weight="2"
+            android:background="@drawable/sideline"/>
+
 
     </LinearLayout>
 

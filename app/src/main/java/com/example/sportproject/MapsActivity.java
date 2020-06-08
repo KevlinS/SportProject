@@ -112,6 +112,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     RunningDAO runningdao;
 
     private String startTime = null;
+    private String finishTime = null;
 
     // GESTION DU THEME
     public static final String PREFS_NAME = "prefs";
@@ -232,7 +233,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         for (int i = 0; i < runningdata_list.size(); i++) {
             int oldId = runningdata_list.get(i).getId();
             String oldStarttime = runningdata_list.get(i).getStarttime();
+            String oldFinishtime = runningdata_list.get(i).getFinishtime();
             double oldDistance = runningdata_list.get(i).getDistance();
+
         }
 
     }
@@ -248,6 +251,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Runningdata NewRunningdata = new Runningdata();
         NewRunningdata.setDistance(runningDistance);
         NewRunningdata.setStarttime(startTime);
+        NewRunningdata.setFinishtime(finishTime);
 
         //utiliser "dao" pour manipuler la base de données
         runningdao.insert(NewRunningdata);
@@ -403,7 +407,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 //obtenir l'heure actuelle du système de périphérique.
                 startTime = Calendar.getInstance().getTime().toString();
-                System.out.println("Current time is: " + startTime);
+                System.out.println("Heure de début: " + startTime);
                 //Sun Jun 07 13:12:49 GMT 2020
 
             }
@@ -429,6 +433,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if (v == btright){//arrêter
                 stopButton();
 
+
+
+
                 // ajouter les données à la base de données
                 AddDataRecordtoDB(v);
             }
@@ -448,7 +455,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         btright.setEnabled(false);
         btright.setBackgroundColor(getResources().getColor(R.color.unabled));
         isDraw = false;
-
+        finishTime = Calendar.getInstance().getTime().toString();
+        System.out.println("heure de fin de course: " + finishTime);
 
         showBound = true;
         showBounds();

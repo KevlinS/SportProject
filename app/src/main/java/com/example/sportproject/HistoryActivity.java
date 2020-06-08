@@ -75,8 +75,9 @@ public class HistoryActivity extends AppCompatActivity {
         for (int i = 0; i < runningdata_list.size(); i++) {
             int oldId = runningdata_list.get(i).getId();
             String  oldStarttime = runningdata_list.get(i).getStarttime();
+            String oldFinishtime = runningdata_list.get(i).getFinishtime();
             double oldDistance = runningdata_list.get(i).getDistance();
-            double oldCalorie = runningdata_list.get(i).getCalorie();
+
 
             View ViewToAdd = LayoutInflater.from(this)
                     .inflate(R.layout.item_data, null);
@@ -84,11 +85,11 @@ public class HistoryActivity extends AppCompatActivity {
             TextView data_id = ViewToAdd.findViewById(R.id.data_id);
             TextView data_distance = ViewToAdd.findViewById(R.id.data_distance);
             TextView data_starttime = ViewToAdd.findViewById(R.id.data_starttime);
-            TextView data_calories = ViewToAdd.findViewById(R.id.data_calories);
+            TextView data_finishtime= ViewToAdd.findViewById(R.id.data_finishtime);
 
             data_id.setText(oldId + "   ");
             data_distance.setText(" " + oldDistance + "");
-            data_calories.setText(oldCalorie + " ");
+            data_finishtime.setText(oldFinishtime);
             data_starttime.setText(oldStarttime);
 
             data_layout.addView(ViewToAdd);
