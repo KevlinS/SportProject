@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
     // pour TextView pas encore prises en charge dans Xml)
     private void initCreateAccountTextView() {
         TextView textViewCreateAccount = (TextView) findViewById(R.id.textViewCreateAccount);
-        textViewCreateAccount.setText(fromHtml("<font color='#ffffff'>Je n'ai pas encore de compte. </font><font color='#0c0099'>créer un compte</font>"));
+        textViewCreateAccount.setText(fromHtml("<font color='#000'>Je n'ai pas encore de compte. </font><font color='##be1010'>créer un compte</font>"));
         textViewCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
