@@ -46,6 +46,7 @@ public class HistoryActivity extends AppCompatActivity {
 
         data_layout = findViewById(R.id.data_layout);
 
+        //Accès à la base de donnée
         final File dbFile = this.getDatabasePath(DB_NAME);
         if(!dbFile.exists()){
             try {
@@ -56,6 +57,7 @@ public class HistoryActivity extends AppCompatActivity {
         }
         queryDataFromDatabase();
     }
+
     private void copyDatabaseFile(String destinationPath) throws IOException {
         InputStream assetsDB = this.getAssets().open(DB_NAME);
         OutputStream dbOut = new FileOutputStream(destinationPath);
@@ -68,6 +70,7 @@ public class HistoryActivity extends AppCompatActivity {
         dbOut.close();
     }
 
+    //Obtenir les données de la base donnée
     public void queryDataFromDatabase() {
         AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, DB_NAME).allowMainThreadQueries().build();
         runningdao = database.getRunningdataDAO();
@@ -78,7 +81,7 @@ public class HistoryActivity extends AppCompatActivity {
             String oldFinishtime = runningdata_list.get(i).getFinishtime();
             double oldDistance = runningdata_list.get(i).getDistance();
 
-
+            //Ajouter layout item_data
             View ViewToAdd = LayoutInflater.from(this)
                     .inflate(R.layout.item_data, null);
 
@@ -97,12 +100,15 @@ public class HistoryActivity extends AppCompatActivity {
         }
 
     }
+
+    //Ajouter layout Menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.back_menu, menu);
         return true;
     }
 
+    //Le choix du menu
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_back:
