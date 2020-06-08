@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#e0f2fa"
     android:orientation="vertical">
 
     <LinearLayout
@@ -127,7 +128,7 @@
             android:layout_margin="15dp"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
-            android:text="démarre"
+            android:text="démarrer"
             android:textColor="@color/button_text"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -138,7 +139,7 @@
             android:layout_height="90dp"
             android:layout_margin="15dp"
             android:layout_weight="1"
-            android:background="@drawable/logo_round" />
+            android:background="@drawable/logo" />
 
         <Button
             android:id="@+id/button_right"
